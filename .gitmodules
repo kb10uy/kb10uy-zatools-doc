@@ -1,3 +1,6 @@
 [submodule "themes/geekdoc"]
 	path = themes/geekdoc
 	url = https://github.com/thegeeklab/hugo-geekdoc
+[submodule "themes/relearn"]
+	path = themes/relearn
+	url = https://github.com/McShelby/hugo-theme-relearn
