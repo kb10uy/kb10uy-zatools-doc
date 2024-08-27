@@ -1,6 +1,6 @@
 baseURL = 'https://zatools.kb10uy.dev/'
 languageCode = 'ja-jp'
-title = 'kb10uy-zatools'
+title = "kb10uy's Various Tools"
 
 theme = 'relearn'
 
@@ -23,3 +23,6 @@ endLevel = 9
 
 [taxonomies]
 tag = "tags"
+
+[params]
+themeVariant = ['relearn-dark', 'relearn-light']
