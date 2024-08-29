@@ -1,14 +1,7 @@
-baseURL = 'https://zatools.kb10uy.dev/'
-languageCode = 'ja-jp'
 title = "kb10uy's Various Tools"
-
-theme = 'relearn'
-
-pluralizeListTitles = false
-
-pygmentsUseClasses = true
-pygmentsCodeFences = true
-disablePathToLower = true
+baseURL = "https://zatools.kb10uy.dev/"
+languageCode = "ja-jp"
+theme = "relearn"
 
 enableRobotsTXT = true
 
@@ -25,4 +18,4 @@ endLevel = 9
 tag = "tags"
 
 [params]
-themeVariant = ['relearn-dark', 'relearn-light']
+themeVariant = ["relearn-dark", "relearn-light"]

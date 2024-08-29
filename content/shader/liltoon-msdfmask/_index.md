@@ -1,7 +1,7 @@
 +++
-title = 'lilToon MsdfMask Extension'
+title = "lilToon MsdfMask Extension"
 date = 2024-08-27T22:27:02+09:00
-featuredImage = 'custom-properties.png'
+images = ["custom-properties.png"]
 +++
 
 収録パッケージ: [lilToon MsdfMask Extension](https://github.com/kb10uy/liltoon-msdfmask) / `org.kb10uy.liltoon-msdfmask`
