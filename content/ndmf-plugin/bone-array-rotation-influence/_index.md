@@ -4,7 +4,7 @@ date = 2024-08-27T22:18:35+09:00
 featuredImage = 'component-initial.png'
 +++
 
-収録パッケージ: [kb10uy's Various Tools / _org.kb10uy.zatools_](https://github.com/kb10uy/kb10uy-zatools)
+収録パッケージ: [kb10uy's Various Tools](https://github.com/kb10uy/kb10uy-zatools) / `org.kb10uy.zatools`
 
 ## 概要
 
