@@ -1,5 +1,5 @@
 +++
-title = 'Ad-Hoc Blendshape Mix'
+title = 'Ad-Hoc BlendShape Mix'
 date = 2024-09-04T20:45:21+09:00
 images = ["component-initial.png"]
 +++
