@@ -39,4 +39,6 @@ images = ["component-initial.png"]
 
 ## その他
 
+**スカートに使う場合、各ボーン鎖のロール角度はスカートの法線か接線方向に揃っている必要があります。**
+
 Rotation Constraint に設定される Rotation Offset の値は正しくない(手動で追加して Activate した場合の値と異なる)可能性があります。ご了承ください。
