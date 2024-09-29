@@ -43,6 +43,17 @@ Eye Pointer のプレハブをアバターに追加したあと、その GameObj
 MA Merge Armature を利用して Unity 上で別アバターの頭部を合成するといった構成では、 **Eye Look の設定には身体側[^2]のボーンを設定する必要があります。**
 頭部側の Eye ボーンを設定した場合、Merge Armature によってそのボーンが消滅し上記の参照先の検索に失敗してしまいます。
 
+> Enhanced EyePointer Installer は処理中に Eye ボーンの Transform 値を操作しますが、
+> MA の処理の一部でボーンの参照先を修正する[^ma-430]際に Transform 値が操作する前の値に戻ってしまいます[^ma-1036](Unity が悪い)。
+> なお現在はボーンの参照先を修正する前の値に再設定する処理が追加されている[^ma-1062]ためこの問題は発生しません。
+
+[^2]: 厳密には Merge Armature で統合先に指定されている、最終的に残る方の Armature に含まれる Eye ボーン
+
+[^ma-430]: [キメラアバターでビルド後Validation時にエラーになることがある。](https://github.com/bdunderscore/modular-avatar/issues/430)
+[^ma-1036]: [Avatar にバインドされる Humanoid ボーンの Transform に対する操作が Rebind humanoid avatar パスで破棄される](https://github.com/bdunderscore/modular-avatar/issues/1036)
+[^ma-1062]: [Preserve local transform when rebinding humanoid avatar](https://github.com/bdunderscore/modular-avatar/pull/1062)
+
+
 ## 既知の問題
 
 {{% expand title="v1.4.1 で修正済み" %}}
