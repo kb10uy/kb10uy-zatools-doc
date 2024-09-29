@@ -38,6 +38,11 @@ Eye Pointer のプレハブをアバターに追加したあと、その GameObj
 
 [^1]: 紛らわしいですが、Humanoid リグの FBX ファイルをインポートした後に Jaw を外したり Force T-pose したりするアレです。
 
+### MA Merge Armature と併用する際の注意点
+
+MA Merge Armature を利用して Unity 上で別アバターの頭部を合成するといった構成では、 **Eye Look の設定には身体側[^2]のボーンを設定する必要があります。**
+頭部側の Eye ボーンを設定した場合、Merge Armature によってそのボーンが消滅し上記の参照先の検索に失敗してしまいます。
+
 ## 既知の問題
 
 {{% expand title="v1.4.1 で修正済み" %}}
