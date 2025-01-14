@@ -16,7 +16,7 @@ BlendShape の合成のためだけに Blender などで編集して再インポ
 
 ## 使い方
 
-SkinnedMeshRenderer が付いている GameObject に `KusakaFactory/Mix BlendShapes on Build` を追加します。
+SkinnedMeshRenderer が付いている GameObject に `Zatools Mix BlendShapes on Build` を追加します。
 
 ![Component View](./component-initial.png?width=480px "コンポーネント追加直後の状態")
 

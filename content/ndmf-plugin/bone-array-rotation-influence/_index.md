@@ -14,7 +14,7 @@ images = ["component-initial.png"]
 
 ## 使い方
 
-アバター内の任意の GameObject に `KusakaFactory/Apply Rotation Influence for Bone Array` を追加します。スカートに対して適用する場合はスカートボーンの共通の親に設置するのがおすすめです。
+アバター内の任意の GameObject に `Zatools Apply Rotation Influence for Bone Array` を追加します。スカートに対して適用する場合はスカートボーンの共通の親に設置するのがおすすめです。
 
 ![Component View](./component-initial.png?width=480px "コンポーネント追加直後の状態")
 

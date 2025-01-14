@@ -15,7 +15,7 @@ Constraint の挿入などをアバターのビルド時に自動で実行しま
 
 ## 使い方
 
-Eye Pointer のプレハブをアバターに追加したあと、その GameObject に `KusakaFactory/Enhanced EyePointer Installer` を追加します。
+Eye Pointer のプレハブをアバターに追加したあと、その GameObject に `Zatools Enhanced EyePointer Installer` を追加します。
 
 ![Component View](./component-initial.png?width=480px "コンポーネント追加直後の状態")
 
