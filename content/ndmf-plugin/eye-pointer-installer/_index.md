@@ -22,8 +22,12 @@ Eye Pointer のプレハブをアバターに追加したあと、その GameObj
 * **VRC Constraint を使ってセットアップする**: Unity の Aim Constraint ではなく VRC Aim Constraint を目のボーンに設定します。Eye Pointer が v1.2 以降である必要があります。
 * **ダミーボーンを挿入する**: 元の目のボーンの上に `DummyEye_L/R` を挿入します。元の目のボーンの角度が (0, 0, 0) から大きく離れている場合に有効です。
 * ~~最適化された FX Layer を生成する~~: **現在この機能は開発中です。**
+* **Global Weightを上書きする** : Aim ConstraintのGlobal Weightを上書きします。Targetを同じ位置に置いた際のEyeboneの操作量を変更したい際に有効です。
+    * **Global Weightの操作Puppetを追加する**: EyePointer操作Menuと同じ階層に上書き値を操作できるRadial Puppet Menuを追加します。
 
-現状では両方のチェックボックスを有効にするのをおすすめします。
+![Global Weight Radial Puppet Menu Preview](./global-weight-menu-preview.gif)
+
+現状では`VRC Constraint を使ってセットアップする`,`ダミーボーンを挿入する`のチェックボックスを有効にするのをおすすめします。
 
 **v1.4.2 以降Eye Pointer のプレハブの配置場所はアバタールートの直下である必要はありません。** ビルド時に自動でアバタールートの直下に移動されます。
 
