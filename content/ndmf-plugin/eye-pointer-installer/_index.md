@@ -24,6 +24,7 @@ Eye Pointer のプレハブをアバターに追加したあと、その GameObj
 * ~~最適化された FX Layer を生成する~~: **現在この機能は開発中です。**
 * **Global Weightを上書きする** : Aim ConstraintのGlobal Weightを上書きします。Targetを同じ位置に置いた際のEyeboneの操作量を変更したい際に有効です。
     * **Global Weightの操作Puppetを追加する**: EyePointer操作Menuと同じ階層に上書き値を操作できるRadial Puppet Menuを追加します。
+* **別のアバター頭部のルート(上級者向け)**: アバタールートの頭部ではなく別アバターの頭部を合成する場合、その別アバターのルートになる GameObject を指定します。通常は無指定で問題ありません。
 
 ![Global Weight Radial Puppet Menu Preview](./global-weight-menu-preview.gif)
 
