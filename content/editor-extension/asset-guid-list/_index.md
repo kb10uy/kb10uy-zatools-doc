@@ -4,7 +4,7 @@ date = 2024-09-08T11:55:46+09:00
 images = ["window.png"]
 +++
 
-収録パッケージ: [kb10uy's Various Tools](https://github.com/kb10uy/kb10uy-zatools) / `org.kb10uy.zatools`
+収録パッケージ: [kb10uy's Various Tools](https://github.com/kb10uy/kb10uy-zatools) / `org.kb10uy.zatools` (>= 1.4.0)
 
 ## 概要
 

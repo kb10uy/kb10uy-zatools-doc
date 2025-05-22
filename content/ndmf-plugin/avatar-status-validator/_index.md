@@ -3,7 +3,7 @@ title = 'Avatar Status Validator'
 date = 2025-05-22T19:36:30+09:00
 +++
 
-収録パッケージ: [kb10uy's Various Tools](https://github.com/kb10uy/kb10uy-zatools) / `org.kb10uy.zatools`
+収録パッケージ: [kb10uy's Various Tools](https://github.com/kb10uy/kb10uy-zatools) / `org.kb10uy.zatools` (>= 2.2.0-beta.1)
 
 ## 概要
 

@@ -4,7 +4,7 @@ date = 2025-05-18T03:23:04+09:00
 images = ["component-initial.png"]
 +++
 
-収録パッケージ: [kb10uy's Various Tools](https://github.com/kb10uy/kb10uy-zatools) / `org.kb10uy.zatools`
+収録パッケージ: [kb10uy's Various Tools](https://github.com/kb10uy/kb10uy-zatools) / `org.kb10uy.zatools` (>= 2.1.0-rc.1)
 
 ## 概要
 
