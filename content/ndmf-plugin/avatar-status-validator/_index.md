@@ -18,3 +18,5 @@ date = 2025-05-22T19:36:30+09:00
 
 `Armature` など、アバター内でアーマチュアの起点の可能性がある名前の GameObject に [MA Merge Armature](https://modular-avatar.nadena.dev/ja/docs/reference/merge-armature) コンポーネントが追加されていない場合、エラーを出力してアバターのビルドを中止させます。
 当該 GameObject に `Zatools Ignored Armature` コンポーネントを追加することで明示的に無視させることが可能です。
+
+(>=2.2.1) Merge Armature か Bone Proxy が上の Armature に追加されている場合も無視されるようになりました。
