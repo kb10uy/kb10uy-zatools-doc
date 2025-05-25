@@ -21,17 +21,15 @@ Eye Pointer のプレハブをアバターに追加したあと、その GameObj
 
 * **VRC Constraint を使ってセットアップする**: Unity の Aim Constraint ではなく VRC Aim Constraint を目のボーンに設定します。Eye Pointer が v1.2 以降である必要があります。
 * **ダミーボーンを挿入する**: 元の目のボーンの上に `DummyEye_L/R` を挿入します。元の目のボーンの角度が (0, 0, 0) から大きく離れている場合に有効です。
-* ~~最適化された FX Layer を生成する~~: **現在この機能は開発中です。**
 * **Global Weightを上書きする** : Aim ConstraintのGlobal Weightを上書きします。Targetを同じ位置に置いた際のEyeboneの操作量を変更したい際に有効です。
     * **Global Weightの操作Puppetを追加する**: EyePointer操作Menuと同じ階層に上書き値を操作できるRadial Puppet Menuを追加します。
+      ![Global Weight Radial Puppet Menu Preview](./global-weight-menu-preview.gif)
+* **FX Layer をアバターに適応させる**: 後述。通常はオフのままで問題ありません。
 * **別のアバター頭部のルート(上級者向け)**: アバタールートの頭部ではなく別アバターの頭部を合成する場合、その別アバターのルートになる GameObject を指定します。通常は無指定で問題ありません。
-
-![Global Weight Radial Puppet Menu Preview](./global-weight-menu-preview.gif)
 
 現状では`VRC Constraint を使ってセットアップする`,`ダミーボーンを挿入する`のチェックボックスを有効にするのをおすすめします。
 
 **v1.4.2 以降Eye Pointer のプレハブの配置場所はアバタールートの直下である必要はありません。** ビルド時に自動でアバタールートの直下に移動されます。
-
 
 ### Eye ボーンの判定方法
 
@@ -42,6 +40,21 @@ Eye Pointer のプレハブをアバターに追加したあと、その GameObj
 3. いずれにもない場合、Enhanced EyePointer Installer は何もしません。
 
 [^1]: 紛らわしいですが、Humanoid リグの FBX ファイルをインポートした後に Jaw を外したり Force T-pose したりするアレです。
+
+### 標準対応していない構成のアーマチュアについて (>=2.3.0)
+
+Eye Pointer は、配布されている状態では目のボーンに到達するまでのアーマチュアの構成に対応しています(2025-05-25 時点)。
+アバター本体のアーマチュアの構成がこれらのパターンに一致しない場合、目のボーンに挿入される Aim Constraint を操作できず正常に動作しない可能性があります。
+
+* `Armature/Hips/Spine/Chest/Neck/Head/LeftEye`
+* `Armature/Hips/Spine/Chest/Neck/Head/Left Eye`
+* `Armature/Hips/Spine/Chest/Neck/Head/Eye_L`
+* `Armature/Hips/Spine/Chest/Neck/Head/Eye.L`
+* etc... (他数種類)
+
+**「FX Layer をアバターに適応させる」のオプションを有効にすると、ビルド時にこれらのアニメーションの操作パスを*実際の*アーマチュアに即したものに書き換えます。**
+これにより、アーマチュアのボーン名を書き換えることなく(つまり他のギミックなどに極力影響を及ぼさず) Eye Pointer を動作させることができます。
+*実際の*目のボーンは上記「Eye ボーンの判定方法」で検出可能である必要があるのでご注意ください。
 
 ### MA Merge Armature と併用する際の注意点
 
