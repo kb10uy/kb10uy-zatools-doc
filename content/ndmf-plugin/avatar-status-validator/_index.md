@@ -16,6 +16,8 @@ date = 2025-05-22T19:36:30+09:00
 
 ![](./scan-unmerged-armature.jpg "MA Merge Armature が抜けている場合のエラー表示")
 
+**(>=2.4.0) `Tools > kb10uy's Various Tools > Avatar Status Validator > Scan suspicious unmerged armature` を有効にする必要があります。**
+
 `Armature` など、アバター内でアーマチュアの起点の可能性がある名前の GameObject に [MA Merge Armature](https://modular-avatar.nadena.dev/ja/docs/reference/merge-armature) コンポーネントが追加されていない場合、エラーを出力してアバターのビルドを中止させます。
 当該 GameObject に `Zatools Ignored Armature` コンポーネントを追加することで明示的に無視させることが可能です。
 
