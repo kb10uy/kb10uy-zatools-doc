@@ -56,7 +56,10 @@ Eye Pointer は、配布されている状態では目のボーンに到達す�
 これにより、アーマチュアのボーン名を書き換えることなく(つまり他のギミックなどに極力影響を及ぼさず) Eye Pointer を動作させることができます。
 *実際の*目のボーンは上記「Eye ボーンの判定方法」で検出可能である必要があるのでご注意ください。
 
-### MA Merge Armature と併用する際の注意点
+
+## その他注意点など
+
+### MA Merge Armature と併用
 
 MA Merge Armature を利用して Unity 上で別アバターの頭部を合成するといった構成では、 **Eye Look の設定には身体側[^2]のボーンを設定する必要があります。**
 頭部側の Eye ボーンを設定した場合、Merge Armature によってそのボーンが消滅し上記の参照先の検索に失敗してしまいます。
@@ -71,6 +74,21 @@ MA Merge Armature を利用して Unity 上で別アバターの頭部を合成�
 [^ma-1036]: [Avatar にバインドされる Humanoid ボーンの Transform に対する操作が Rebind humanoid avatar パスで破棄される](https://github.com/bdunderscore/modular-avatar/issues/1036)
 [^ma-1062]: [Preserve local transform when rebinding humanoid avatar](https://github.com/bdunderscore/modular-avatar/pull/1062)
 
+### AvatarPoseSystem との併用
+
+[AvatarPoseSystem](https://booth.pm/ja/items/5989814) に EyePointer を導入する際にこのコンポーネントを使用する場合、以下の条件を満たす必要があります。
+
+* AvatarPoseSystem >= 3.0.2
+* kb10uy's Various Tools >= 2.4.1
+
+その上で次のように設定してください。記載のない項目については特に制限はありません。
+
+* AvatarPoseSystem
+    * Unhandle Eyes: 有効
+* Enhanced EyePointer Installer
+    * VRC Constraint を使ってセットアップする: 有効
+    * ダミーボーンを挿入する: 無効
+    * FX Layer をアバターに適応させる: 有効
 
 ## 既知の問題
 
