@@ -1,5 +1,5 @@
 +++
-title = 'Ad-Hoc Normal Bend'
+title = 'Ad-Hoc Normal Bending'
 date = 2025-08-04T11:30:00+09:00
 images = ["component-initial.png"]
 +++
