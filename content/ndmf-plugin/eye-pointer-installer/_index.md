@@ -78,17 +78,25 @@ MA Merge Armature を利用して Unity 上で別アバターの頭部を合成�
 
 [AvatarPoseSystem](https://booth.pm/ja/items/5989814) に EyePointer を導入する際にこのコンポーネントを使用する場合、以下の条件を満たす必要があります。
 
-* AvatarPoseSystem >= 3.0.2
-* kb10uy's Various Tools >= 2.4.1
+* AvatarPoseSystem >= 4.1.0
+* kb10uy's Various Tools >= 3.1.6
 
 その上で次のように設定してください。記載のない項目については特に制限はありません。
 
 * AvatarPoseSystem
     * Unhandle Eyes: 有効
+    * Unfix Objects: 以下のものを設定
+        - `EyePointer/WorldAnchor/TargetHead`
+        - `EyePointer/WorldAnchor/TargetHand_L`
+        - `EyePointer/WorldAnchor/TargetHand_R`
 * Enhanced EyePointer Installer
     * VRC Constraint を使ってセットアップする: 有効
     * ダミーボーンを挿入する: 無効
     * FX Layer をアバターに適応させる: 有効
+
+![Component View](./aps-setting.png?width=640px "AvatarPoseSystem の設定")
+
+この状態でビルドすると、Enhanced EyePointer Installer が自動的に AvatarPoseSystem を検知して追加の処理を実行します。
 
 ## 既知の問題
 
