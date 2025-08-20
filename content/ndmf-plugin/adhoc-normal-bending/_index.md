@@ -13,6 +13,8 @@ images = ["component-initial.png"]
 
 主な用途としては、口腔内の舌や歯などの法線を正面方向に向けることなどを想定しています。
 
+NDMF Preview に対応しています。
+
 
 ## 使い方
 
