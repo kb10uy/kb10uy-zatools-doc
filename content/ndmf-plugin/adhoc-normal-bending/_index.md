@@ -2,6 +2,7 @@
 title = 'Ad-Hoc Normal Bending'
 date = 2025-08-04T11:30:00+09:00
 images = ["component-initial.png"]
+weight = 202
 +++
 
 収録パッケージ: [kb10uy's Various Tools](https://github.com/kb10uy/kb10uy-zatools) / `org.kb10uy.zatools` (>= 3.1.0)

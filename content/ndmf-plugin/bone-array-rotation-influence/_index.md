@@ -2,6 +2,7 @@
 title = "Bone Array Rotation Influence"
 date = 2024-08-27T22:18:35+09:00
 images = ["component-initial.png"]
+weight = 102
 +++
 
 収録パッケージ: [kb10uy's Various Tools](https://github.com/kb10uy/kb10uy-zatools) / `org.kb10uy.zatools` (>= 1.0.0)

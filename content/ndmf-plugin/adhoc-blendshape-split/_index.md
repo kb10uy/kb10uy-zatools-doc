@@ -2,6 +2,7 @@
 title = 'Ad-Hoc BlendShape Split'
 date = 2025-08-20T23:24:17+09:00
 images = ["component-initial.png"]
+weight = 203
 +++
 
 収録パッケージ: [kb10uy's Various Tools](https://github.com/kb10uy/kb10uy-zatools) / `org.kb10uy.zatools` (>= 3.2.0)
