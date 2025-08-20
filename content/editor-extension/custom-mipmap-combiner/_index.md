@@ -2,6 +2,7 @@
 title = 'Custom Mipmap Combiner'
 date = 2024-09-14T20:22:43+09:00
 images = ["window.png"]
+weight = 202
 +++
 
 収録パッケージ: [kb10uy's Various Tools](https://github.com/kb10uy/kb10uy-zatools) / `org.kb10uy.zatools` (>= 1.5.0)
