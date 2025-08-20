@@ -22,7 +22,7 @@ SkinnedMeshRenderer が付いている GameObject に `Zatools Bend Normal on Bu
 
 ![Component View](./component-initial.png?width=480px "コンポーネント追加直後の状態")
 
-* **法線方向**: 法線を曲げる方向の Transform を指定します。 None の場合は SkinnedMeshRenderer の Transform (通常はアバター正面方向)を採用します。この Transform の Z 軸正の方向(forward)に向かって曲げられます。
+* **法線方向**: 法線を曲げる方向の Transform を指定します。 None の場合はアバタールートの Transform (通常はアバター正面方向)を採用します。この Transform の Z 軸正の方向(forward)に向かって曲げられます。
 * **ウェイト**: 法線方向で指定した Transform にどれくらい曲げるかを指定します。0 のときは元の法線が維持され、1 のときは法線方向と完全に一致します。中間の値はクォータニオンで補間されます。
 * **マスクテクスチャ**: 法線を曲げる部分を指定するマスクテクスチャ。None の場合は全て白いテクスチャが仮想的に割り当てられます。 [AAO Remove Mesh by Mask に含まれるエディタ](https://vpm.anatawa12.com/avatar-optimizer/ja/docs/reference/remove-mesh-by-mask/#mask-texture-editor)などを利用すると便利です。
 * **マスクのサンプリング方法**: マスクテクスチャのうち白と黒どちらを曲げるポリゴンの領域として採用するかを指定します。初期値は White で白い部分のポリゴンが対象になりますが、上記エディタで作成する場合白地に黒塗りとなるので Black を指定してください。
