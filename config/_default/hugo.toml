@@ -1,0 +1,9 @@
+title = "kb10uy's Various Tools"
+baseURL = "https://zatools.kb10uy.dev/"
+languageCode = "ja-jp"
+
+enableRobotsTXT = true
+
+[taxonomies]
+tag = "tags"
+
