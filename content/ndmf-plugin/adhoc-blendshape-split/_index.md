@@ -35,4 +35,4 @@ SkinnedMeshRenderer が付いている GameObject に `Zatools Bend Normal on Bu
 Transforming Phase 以降に動作する NDMF プラグインは生成された BlendShape を発見可能ですが、Edit Mode では(たとえ NDMF Preview が有効でも)表示されている **SkinnedMeshRenderer の BlendShapes のリストには表示されません。**
 このため、生成される BlendShape を他プラグインで利用するためには存在しない BlendShape を名前で指定できる必要があります。
 
-概要にもあるとおり、Ad-Hoc BlendShape Mix より後に動作するためそれと併用することで「両目同時にしか動かない BlendShape を別の片目ずつの BlendShape に適用させたい」というようなケースに利用可能です。
+概要にもあるとおり、Ad-Hoc BlendShape Mix より前に動作するためそれと併用することで「両目同時にしか動かない BlendShape を別の片目ずつの BlendShape に適用させたい」というようなケースに利用可能です。
