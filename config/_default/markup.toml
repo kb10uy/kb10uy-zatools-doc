@@ -1,0 +1,7 @@
+[goldmark]
+  [goldmark.renderer]
+    unsafe = true
+
+[tableOfContents]
+  startLevel = 1
+  endLevel = 9
