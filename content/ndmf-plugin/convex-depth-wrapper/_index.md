@@ -1,6 +1,6 @@
 +++
 title = 'Convex Depth Wrapper'
-date = 2026-05-16T06:00:00+09:00
+date = 2026-05-16T05:30:00+09:00
 images = ["component-initial.png"]
 weight = 105
 +++
