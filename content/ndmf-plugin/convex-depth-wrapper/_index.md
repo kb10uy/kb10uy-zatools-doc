@@ -24,3 +24,8 @@ NDMF Preview に対応しています。
 
 NDMF Preview を有効にすると凸包メッシュ形状のクロスハッチが描画されるようになります。
 ![Preview](./preview.png?width=640px "NDMF Preview を有効にした状態")
+
+
+## MA Material Swap で切り替えられるようにする
+
+任意の GameObject に対し右クリックメニューの `Zatools > Add MA Material Swap for Depth Wrapper` で深度を書き込むマテリアルを無効化する Material Swap コンポーネントを追加できます。
