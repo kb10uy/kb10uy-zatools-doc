@@ -7,15 +7,22 @@ date = 2024-08-27T21:30:00+09:00
 
 kb10uy が作成した VRChat プロジェクト用の様々なツールなどをまとめて解説しています。
 
+
+## パッケージ一覧
+
+* Zatools: kb10uy's Various Tools (`org.kb10uy.zatools`)
+* lilToon MsdfMask Extension (`org.kb10uy.liltoon-msdfmask`)
+
+
 ## インストール方法
 
-[kb10uy VRChat Package Repository ](https://kb10uy.github.io/vrc-repository/) から適切なパッケージをインストールしてください。
+[kb10uy VRChat Package Repository](https://kb10uy.github.io/vrc-repository/) から適切なパッケージをインストールしてください。
 
 一部のパッケージは外部のリポジトリのパッケージに対する依存があります。以下のリポジトリを合わせて登録しておくことをおすすめします。
 
 * [bd_ さんのリポジトリ](vcc://vpm/addRepo?url=https://vpm.nadena.dev/vpm.json)
 * [lil さんのリポジトリ](vcc://vpm/addRepo?url=https://lilxyzw.github.io/vpm-repos/vpm.json)
-* [Haï~ さんのリポジトリ](vcc://vpm/addRepo?url=https://hai-vr.github.io/vpm-listing/index.json)
+
 
 ## ライセンス
 

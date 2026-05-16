@@ -9,6 +9,8 @@ weight = 101
 
 **2024-09-03 以降は[Automatic EyePointer Installer](https://github.com/kb10uy/eye-pointer-installer) ではなくこちらをご利用ください。**
 
+(>=3.7.1) 内部実装をリファクタリングし、NDMF/MA のみで全ての処理が完結するようになりました。
+
 ## 概要
 
 Siromori 氏の [Eye Pointer](https://booth.pm/ja/items/4742883) のセットアップを自動化するスクリプトです。
@@ -108,4 +110,3 @@ MA Merge Armature を利用して Unity 上で別アバターの頭部を合成�
 詳しくは[Issue #16 のコメント](https://github.com/kb10uy/kb10uy-zatools/issues/16#issuecomment-2336783558)を参照してください。
 v1.4.1 以降はこの場合無意味な GameObject を追加し Eye Look をそれに対して有効化します。
 {{% /expand %}}
-
