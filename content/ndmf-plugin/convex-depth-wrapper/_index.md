@@ -47,6 +47,15 @@ UV は生成されていませんが何かに使えるかもしれません。
 適用対象の GameObject の子に上のような Menu Item が追加されますので、適宜 MA Menu Install Target で移動するなどしてお使いください。
 
 
+## 上級者向け: 個別の SkinnedMeshRenderer に生成する (>= 3.8.0)
+
+空の GameObject にこのコンポーネントを追加すると、以下のように空の SkinnedMeshRenderer とともに **生成対象** というフィールドが出現します。
+この **生成対象** に凸包メッシュを生成したい SkinnedMeshRenderer (`Body` など)を設定すると、生成元 Mesh の submesh ではなく独立した Mesh として生成されるようになります。
+
+![Component](./separate.png?width=800px "個別セットアップ")
+
+通常の、適用対象に直接追加する方法で問題が発生する場合はこちらの方法をお試しください。
+
 ## 備考
 
 ShadowCaster パスで深度を上書きするため、以下のような副作用が発生する可能性があります。問題があるシーンでは上記の手順で一時的に無効化するなどしてください。
