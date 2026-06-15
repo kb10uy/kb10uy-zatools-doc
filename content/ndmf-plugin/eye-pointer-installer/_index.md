@@ -24,7 +24,7 @@ Eye Pointer のプレハブをアバターに追加したあと、その GameObj
 
 * **VRC Constraint を使ってセットアップする**: Unity の Aim Constraint ではなく VRC Aim Constraint を目のボーンに設定します。Eye Pointer が v1.2 以降である必要があります。
 * **目にダミーボーンを挿入する**: 元の目のボーンの上に `DummyEye_L/R` を挿入します。元の目のボーンの角度が (0, 0, 0) から大きく離れている場合に有効です。
-* **ターゲットの軸を修正する**: (>= 4.0.0-beta.1) 注目点を操作するための Target オブジェクトの配置を、LowerArm から Hand の方向を用いて修正して配置するようにします。ボーンの向き先方向と Transform の +Y 軸が揃っていないアバターの場合、これを有効にすると操作感が改善します。
+* **ターゲットの軸を修正する**: (>= 4.0.0) 注目点を操作するための Target オブジェクトの配置を、LowerArm から Hand の方向を用いて修正して配置するようにします。ボーンの向き先方向と Transform の +Y 軸が揃っていないアバターの場合、これを有効にすると操作感が改善します。
 * **Global Weightを上書きする** : Aim ConstraintのGlobal Weightを上書きします。Targetを同じ位置に置いた際のEyeboneの操作量を変更したい際に有効です。
     * **Global Weightの操作Puppetを追加する**: EyePointer操作Menuと同じ階層に上書き値を操作できるRadial Puppet Menuを追加します。
       ![Global Weight Radial Puppet Menu Preview](./global-weight-menu-preview.gif)
@@ -78,7 +78,16 @@ MA Merge Armature を利用して Unity 上で別アバターの頭部を合成�
 [^ma-1036]: [Avatar にバインドされる Humanoid ボーンの Transform に対する操作が Rebind humanoid avatar パスで破棄される](https://github.com/bdunderscore/modular-avatar/issues/1036)
 [^ma-1062]: [Preserve local transform when rebinding humanoid avatar](https://github.com/bdunderscore/modular-avatar/pull/1062)
 
-### AvatarPoseSystem との併用
+### AvatarPoseSystem との併用 (>= 4.0.0)
+
+アバター内に [AvatarPoseSystem](https://booth.pm/ja/items/5989814) が設置されていることを検出した場合、自動的に専用の処理が実行されます。
+これについて、現時点で以下の制約があります。
+
+* AvatarPoseSystem >= 4.1.0 である必要があります。
+* **目にダミーボーンを挿入する** とは併用できません(強制的に無効になります)。
+* **ターゲットの軸を修正する** とは併用できます。
+
+{{% expand title="(< 4.0.0) 過去のバージョンでの手動設定" %}}
 
 [AvatarPoseSystem](https://booth.pm/ja/items/5989814) に EyePointer を導入する際にこのコンポーネントを使用する場合、以下の条件を満たす必要があります。
 
@@ -101,6 +110,9 @@ MA Merge Armature を利用して Unity 上で別アバターの頭部を合成�
 ![Component View](./aps-setting.png?width=640px "AvatarPoseSystem の設定")
 
 この状態でビルドすると、Enhanced EyePointer Installer が自動的に AvatarPoseSystem を検知して追加の処理を実行します。
+
+{{% /expand %}}
+
 
 ## 既知の問題
 
