@@ -3,9 +3,17 @@ title = 'PB Finger Collider Transfer Target'
 date = 2025-05-18T03:23:04+09:00
 images = ["component-initial.png"]
 weight = 103
+[params]
+hidden = true
 +++
 
-収録パッケージ: [kb10uy's Various Tools](https://github.com/kb10uy/kb10uy-zatools) / `org.kb10uy.zatools` (>= 2.1.0-rc.1)
+## 削除されたコンポーネントです (>= 4.0.0)
+
+[MA Global Collider](https://modular-avatar.nadena.dev/ja/docs/reference/global-collider) が同等の機能を提供しているため、今後はそちらを利用してください。
+
+{{% expand title="(< 4.0.0) 過去の記述" %}}
+
+収録パッケージ: [kb10uy's Various Tools](https://github.com/kb10uy/kb10uy-zatools) / `org.kb10uy.zatools` (>= 2.1.0-rc.1, < 4.0.0)
 
 ## 概要
 
@@ -53,3 +61,5 @@ VRC Avatar Descriptor で設定される [Standard Colliders](https://creators.v
 これは、VRChat の Finger Collider に対する特殊な挙動[^1]を回避するためのものです。
 
 [^1]: [【VRChat】PB干渉リクちゃん（PhysBone干渉コライダー移動）の作り方｜LABO405](https://note.com/labo405/n/nac5615af9b0e)
+
+{{% /expand %}}
