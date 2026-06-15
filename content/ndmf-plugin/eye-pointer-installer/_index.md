@@ -23,7 +23,8 @@ Eye Pointer のプレハブをアバターに追加したあと、その GameObj
 ![Component View](./component-initial.png?width=480px "コンポーネント追加直後の状態")
 
 * **VRC Constraint を使ってセットアップする**: Unity の Aim Constraint ではなく VRC Aim Constraint を目のボーンに設定します。Eye Pointer が v1.2 以降である必要があります。
-* **ダミーボーンを挿入する**: 元の目のボーンの上に `DummyEye_L/R` を挿入します。元の目のボーンの角度が (0, 0, 0) から大きく離れている場合に有効です。
+* **目にダミーボーンを挿入する**: 元の目のボーンの上に `DummyEye_L/R` を挿入します。元の目のボーンの角度が (0, 0, 0) から大きく離れている場合に有効です。
+* **ターゲットの軸を修正する**: (>= 4.0.0-beta.1) 注目点を操作するための Target オブジェクトの配置を、LowerArm から Hand の方向を用いて修正して配置するようにします。ボーンの向き先方向と Transform の +Y 軸が揃っていないアバターの場合、これを有効にすると操作感が改善します。
 * **Global Weightを上書きする** : Aim ConstraintのGlobal Weightを上書きします。Targetを同じ位置に置いた際のEyeboneの操作量を変更したい際に有効です。
     * **Global Weightの操作Puppetを追加する**: EyePointer操作Menuと同じ階層に上書き値を操作できるRadial Puppet Menuを追加します。
       ![Global Weight Radial Puppet Menu Preview](./global-weight-menu-preview.gif)
