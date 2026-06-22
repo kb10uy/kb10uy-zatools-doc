@@ -80,6 +80,10 @@ MA Merge Armature を利用して Unity 上で別アバターの頭部を合成�
 
 ### AvatarPoseSystem との併用 (>= 4.0.0)
 
+**(>= 4.0.1) We will not pursue development related to interoperability with AvatarPoseSystem, except for bugs on the EEPI side alone.**
+We have determined that further compatibility improvements for the AvatarPoseSystem's current implementation is impossible anymore, although a significant amount of resources has been allocated to this feature across Zatools versions 3.1.6 through 4.0.1,
+For more details, please see the [relevant GitHub Issues](https://github.com/kb10uy/kb10uy-zatools/issues?q=is%3Aissue%20%28AvatarPoseSystem%20OR%20APS%29).
+
 アバター内に [AvatarPoseSystem](https://booth.pm/ja/items/5989814) が設置されていることを検出した場合、自動的に専用の処理が実行されます。
 これについて、現時点で以下の制約があります。
 
