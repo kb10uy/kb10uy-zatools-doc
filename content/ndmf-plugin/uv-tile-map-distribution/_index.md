@@ -2,7 +2,7 @@
 title = 'UV Tile Map Distribution'
 date = 2025-09-15T12:00:00+09:00
 images = ["component-initial.png"]
-weight = 204
+weight = 203
 +++
 
 収録パッケージ: [kb10uy's Various Tools](https://github.com/kb10uy/kb10uy-zatools) / `org.kb10uy.zatools` (>= 3.3.0)

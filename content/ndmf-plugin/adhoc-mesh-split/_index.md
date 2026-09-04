@@ -2,7 +2,7 @@
 title = 'Ad-Hoc Mesh Split'
 date = 2026-02-25T23:00:00+09:00
 images = ["component-initial.png"]
-weight = 204
+weight = 104
 +++
 
 収録パッケージ: [kb10uy's Various Tools](https://github.com/kb10uy/kb10uy-zatools) / `org.kb10uy.zatools` (>= 3.4.0)

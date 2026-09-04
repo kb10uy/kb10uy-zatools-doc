@@ -2,7 +2,7 @@
 title = 'Ad-Hoc Vertex Data Transfer'
 date = 2026-07-20T21:30:00+09:00
 images = ["component-initial.png"]
-weight = 201
+weight = 105
 +++
 
 収録パッケージ: [kb10uy's Various Tools](https://github.com/kb10uy/kb10uy-zatools) / `org.kb10uy.zatools` (>= 5.0.0)

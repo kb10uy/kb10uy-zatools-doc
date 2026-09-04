@@ -2,7 +2,7 @@
 title = 'PB Finger Collider Transfer Target'
 date = 2025-05-18T03:23:04+09:00
 images = ["component-initial.png"]
-weight = 103
+weight = 1002
 [params]
 hidden = true
 +++

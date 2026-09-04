@@ -2,7 +2,7 @@
 title = 'Convex Depth Wrapper'
 date = 2026-05-16T05:30:00+09:00
 images = ["component-initial.png"]
-weight = 105
+weight = 202
 +++
 
 収録パッケージ: [kb10uy's Various Tools](https://github.com/kb10uy/kb10uy-zatools) / `org.kb10uy.zatools` (>= 3.7.0)

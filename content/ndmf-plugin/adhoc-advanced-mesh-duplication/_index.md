@@ -2,7 +2,7 @@
 title = 'Ad-Hoc Advanced Mesh Duplication'
 date = 2026-09-05T00:00:00+09:00
 images = ["component-initial.png"]
-weight = 206
+weight = 106
 +++
 
 収録パッケージ: [kb10uy's Various Tools](https://github.com/kb10uy/kb10uy-zatools) / `org.kb10uy.zatools` (>= 6.0.0)

@@ -2,7 +2,7 @@
 title = 'PB Ignored Transform'
 date = 2026-08-14T20:00:00+09:00
 images = ["component-initial.png"]
-weight = 103
+weight = 1001
 +++
 
 収録パッケージ: [kb10uy's Various Tools](https://github.com/kb10uy/kb10uy-zatools) / `org.kb10uy.zatools` (>= 5.1.0)

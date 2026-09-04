@@ -2,7 +2,7 @@
 title = 'Eyehole Depth Wrapper'
 date = 2026-05-11T13:30:00+09:00
 images = ["component-initial.png"]
-weight = 105
+weight = 201
 +++
 
 収録パッケージ: [kb10uy's Various Tools](https://github.com/kb10uy/kb10uy-zatools) / `org.kb10uy.zatools` (>= 3.6.0)
