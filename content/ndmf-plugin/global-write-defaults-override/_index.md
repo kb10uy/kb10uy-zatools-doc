@@ -1,6 +1,6 @@
 +++
 title = "Global WD Override"
-date = 2024-09-11T20:00:00+09:00
+date = 2024-09-11T19:57:00+09:00
 images = ["component-initial.png"]
 weight = 303
 +++
