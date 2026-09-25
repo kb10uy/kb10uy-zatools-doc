@@ -54,3 +54,24 @@ float block2 = dot(color.xyz, float3(0.299, 0.587, 0.114));
 
 return float4(block1.xyz, block2);
 ```
+
+### 行列
+
+ZAX Code:
+```
+; @position: float3, @angle: float
+0 1 0 vec3 Mtranslate
+@angle Mroty Mto4
+M*
+@position Mtfpoint
+```
+
+HLSL Equivalent:
+```hlsl
+// float3 position; float angle;
+float4x4 t = /* translate by (0, 1, 0) */;
+float4x4 r = /* rotate around Y by angle */;
+return mul(mul(t, r), float4(position, 1.0)).xyz;
+```
+
+行列は N 個の `floatN` の並びとして扱われる。詳細は[行列・クォータニオン](./matrix.md)を参照。
