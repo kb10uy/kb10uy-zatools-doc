@@ -1,0 +1,317 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Zatools Face Tracking Data Installer definition",
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["Version"],
+    "properties": {
+        "$schema": { "type": "string" },
+        "Version": { "const": 1 },
+        "UseAllTrackingKeys": {
+            "type": "boolean",
+            "description": "Omit to leave the Avatar Descriptor value as is. Definitions on one avatar must not disagree."
+        },
+        "VisemeDampen": {
+            "type": "object",
+            "description": "Omit to leave the Avatar Descriptor value as is. Definitions on one avatar must not disagree.",
+            "additionalProperties": false,
+            "required": ["Mode", "Amount"],
+            "properties": {
+                "Mode": { "enum": ["None", "DampenTracking", "DampenVisemes"] },
+                "Amount": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1
+                }
+            }
+        },
+        "BlendShapeSets": {
+            "type": "array",
+            "maxItems": 128,
+            "items": { "$ref": "#/definitions/blendShapeSet" }
+        },
+        "ParameterBehaviors": {
+            "type": "array",
+            "maxItems": 128,
+            "items": { "$ref": "#/definitions/parameterBehavior" }
+        }
+    },
+    "definitions": {
+        "blendShapeSet": {
+            "type": "object",
+            "description": "Sets with the same name across definitions are merged by key.",
+            "additionalProperties": false,
+            "required": ["Name"],
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 100
+                },
+                "DefaultWeight": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1
+                },
+                "TrackingKeys": {
+                    "type": "object",
+                    "propertyNames": { "$ref": "#/definitions/trackingKey" },
+                    "additionalProperties": {
+                        "$ref": "#/definitions/shapeMapping"
+                    }
+                },
+                "Visemes": {
+                    "type": "object",
+                    "propertyNames": { "$ref": "#/definitions/viseme" },
+                    "additionalProperties": {
+                        "$ref": "#/definitions/shapeMapping"
+                    }
+                }
+            }
+        },
+        "shapeMapping": {
+            "oneOf": [
+                { "type": "string", "minLength": 1 },
+                {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": ["Shape"],
+                    "properties": {
+                        "Shape": { "type": "string", "minLength": 1 },
+                        "Multiplier": { "type": "number", "default": 1 }
+                    }
+                }
+            ]
+        },
+        "parameterBehavior": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["Operation", "Target", "Expression"],
+            "properties": {
+                "Operation": {
+                    "enum": [
+                        "ForwardToAnimator",
+                        "ApplyBlendSetWeight",
+                        "ApplyToBlendshape",
+                        "LimitBlendshapeMax",
+                        "LimitBlendshapeMin"
+                    ]
+                },
+                "Target": {
+                    "type": "string",
+                    "minLength": 1,
+                    "description": "Animator parameter, BlendShapeSet or blendshape name, depending on Operation."
+                },
+                "Weight": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 100,
+                    "description": "Name of the BlendShapeSet whose weight scales this behavior."
+                },
+                "Expression": {
+                    "oneOf": [
+                        { "$ref": "#/definitions/combineExpression" },
+                        { "$ref": "#/definitions/customExpression" }
+                    ]
+                }
+            },
+            "if": {
+                "required": ["Operation"],
+                "properties": { "Operation": { "const": "ForwardToAnimator" } }
+            },
+            "then": { "properties": { "Target": { "maxLength": 64 } } }
+        },
+        "combineExpression": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["Type", "TrackingKeys"],
+            "properties": {
+                "Type": { "enum": ["Max", "Min", "Add", "Multiply"] },
+                "TrackingKeys": {
+                    "type": "array",
+                    "minItems": 1,
+                    "maxItems": 32,
+                    "items": { "$ref": "#/definitions/input" }
+                }
+            }
+        },
+        "customExpression": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["Type", "Expression"],
+            "properties": {
+                "Type": { "const": "Custom" },
+                "Expression": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 1024,
+                    "description": "Supports + - * / abs() min() max() clamp(). The output is clamped between -1 and 1."
+                }
+            }
+        },
+        "input": {
+            "oneOf": [
+                { "$ref": "#/definitions/inputKey" },
+                {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": ["Key"],
+                    "properties": {
+                        "Key": { "$ref": "#/definitions/inputKey" },
+                        "Invert": { "type": "boolean", "default": false }
+                    }
+                }
+            ]
+        },
+        "inputKey": {
+            "anyOf": [
+                { "$ref": "#/definitions/trackingKey" },
+                {
+                    "enum": [
+                        "Voice",
+                        "Viseme_sil",
+                        "Viseme_pp",
+                        "Viseme_ff",
+                        "Viseme_th",
+                        "Viseme_dd",
+                        "Viseme_kk",
+                        "Viseme_ch",
+                        "Viseme_ss",
+                        "Viseme_nn",
+                        "Viseme_rr",
+                        "Viseme_aa",
+                        "Viseme_e",
+                        "Viseme_ih",
+                        "Viseme_oh",
+                        "Viseme_ou"
+                    ]
+                }
+            ]
+        },
+        "viseme": {
+            "enum": [
+                "sil",
+                "PP",
+                "FF",
+                "TH",
+                "DD",
+                "kk",
+                "CH",
+                "SS",
+                "nn",
+                "RR",
+                "aa",
+                "E",
+                "ih",
+                "oh",
+                "ou"
+            ]
+        },
+        "trackingKey": {
+            "enum": [
+                "EyeLookOutRight",
+                "EyeLookInRight",
+                "EyeLookUpRight",
+                "EyeLookDownRight",
+                "EyeLookOutLeft",
+                "EyeLookInLeft",
+                "EyeLookUpLeft",
+                "EyeLookDownLeft",
+                "EyeClosedRight",
+                "EyeClosedLeft",
+                "EyeDilationRight",
+                "EyeDilationLeft",
+                "EyeConstrictRight",
+                "EyeConstrictLeft",
+                "EyeSquintRight",
+                "EyeSquintLeft",
+                "EyeWideRight",
+                "EyeWideLeft",
+                "BrowPinchRight",
+                "BrowPinchLeft",
+                "BrowLowererRight",
+                "BrowLowererLeft",
+                "BrowInnerUpRight",
+                "BrowInnerUpLeft",
+                "BrowOuterUpRight",
+                "BrowOuterUpLeft",
+                "NasalDilationRight",
+                "NasalDilationLeft",
+                "NasalConstrictRight",
+                "NasalConstrictLeft",
+                "CheekSquintRight",
+                "CheekSquintLeft",
+                "CheekPuffRight",
+                "CheekPuffLeft",
+                "CheekSuckRight",
+                "CheekSuckLeft",
+                "JawOpen",
+                "JawRight",
+                "JawLeft",
+                "JawForward",
+                "JawBackward",
+                "JawClench",
+                "JawMandibleRaise",
+                "MouthClosed",
+                "LipSuckUpperRight",
+                "LipSuckUpperLeft",
+                "LipSuckLowerRight",
+                "LipSuckLowerLeft",
+                "LipSuckCornerRight",
+                "LipSuckCornerLeft",
+                "LipFunnelUpperRight",
+                "LipFunnelUpperLeft",
+                "LipFunnelLowerRight",
+                "LipFunnelLowerLeft",
+                "LipPuckerUpperRight",
+                "LipPuckerUpperLeft",
+                "LipPuckerLowerRight",
+                "LipPuckerLowerLeft",
+                "MouthUpperUpRight",
+                "MouthUpperUpLeft",
+                "MouthUpperDeepenRight",
+                "MouthUpperDeepenLeft",
+                "NoseSneerRight",
+                "NoseSneerLeft",
+                "MouthLowerDownRight",
+                "MouthLowerDownLeft",
+                "MouthUpperRight",
+                "MouthUpperLeft",
+                "MouthLowerRight",
+                "MouthLowerLeft",
+                "MouthCornerPullRight",
+                "MouthCornerPullLeft",
+                "MouthCornerSlantRight",
+                "MouthCornerSlantLeft",
+                "MouthFrownRight",
+                "MouthFrownLeft",
+                "MouthStretchRight",
+                "MouthStretchLeft",
+                "MouthDimpleRight",
+                "MouthDimpleLeft",
+                "MouthRaiserUpper",
+                "MouthRaiserLower",
+                "MouthPressRight",
+                "MouthPressLeft",
+                "MouthTightenerRight",
+                "MouthTightenerLeft",
+                "TongueOut",
+                "TongueUp",
+                "TongueDown",
+                "TongueRight",
+                "TongueLeft",
+                "TongueRoll",
+                "TongueBendDown",
+                "TongueCurlUp",
+                "TongueSquish",
+                "TongueFlat",
+                "TongueTwistRight",
+                "TongueTwistLeft",
+                "SoftPalateClose",
+                "ThroatSwallow",
+                "NeckFlexRight",
+                "NeckFlexLeft"
+            ]
+        }
+    }
+}
